@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "Boy8",
+            "location": "East Asia"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "Boy8_db",
+                "serverName": "bw4lfrigq6",
+                "user": "Boy7DB",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "East Asia"
+            }
+        ]
+    }
+}

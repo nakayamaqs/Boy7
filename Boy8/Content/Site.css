@@ -1,0 +1,70 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    /*background-image: url("../images/boy7.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.bb-hlsection {
+    padding-top: 4px;
+}
+
+.bb-footcontainer {
+    padding: 0px;
+}
+
+.bb-divtodo {
+    min-height: 10em;
+    height: 400px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.bb-carouselhelper {
+    margin-top: 21px;
+}
+
+.bb-navlogin-right {
+    padding-right: 25px;
+}
