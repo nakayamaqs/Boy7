@@ -45,6 +45,8 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+/*Baby customized section begin*/
+
 .bb-hlsection {
     padding-top: 4px;
 }
@@ -62,9 +64,13 @@ input[type="checkbox"].input-validation-error {
 }
 
 .bb-carouselhelper {
-    margin-top: 21px;
+    margin-top: 0px;
 }
 
 .bb-navlogin-right {
     padding-right: 25px;
+}
+
+.bb-navbar {
+    margin-top: 0px;
 }

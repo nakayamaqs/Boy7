@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Boy8.Models
+namespace Boy8.ViewModels
 {
 
     public class ExternalLoginConfirmationViewModel

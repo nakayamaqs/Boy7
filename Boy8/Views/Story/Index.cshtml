@@ -4,115 +4,80 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+    <h2>Index</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abstract)
+            </th>
 
-<h2>Index</h2>
+            <th>
+                @Html.DisplayNameFor(model => model.StoryCreatedOrSyncTime)
+            </th>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Body)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Abstract)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Picture)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vedio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OtherResources)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StoryCreatedTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SyncTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Source)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SyncAppID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SyncAccount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SyncComment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SyncOther)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
-        </th>
-        <th></th>
-    </tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SyncOther)
+            </th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Abstract)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Picture)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vedio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OtherResources)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StoryCreatedTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SyncTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Source)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SyncAppID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SyncAccount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SyncComment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SyncOther)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StoryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StoryId })
-        </td>
-    </tr>
-}
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Abstract)
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoryCreatedOrSyncTime)
+                </td>
+                            
+                <td>
+                    @Html.DisplayFor(modelItem => item.SyncAccount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SyncComment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SyncOther)
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StoryId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StoryId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StoryId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

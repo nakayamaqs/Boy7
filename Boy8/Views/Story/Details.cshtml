@@ -4,136 +4,98 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+    <h2>Details</h2>
+    <div>
+        <h4>Story</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
 
-<h2>Details</h2>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
 
-<div>
-    <h4>Story</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Body)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Body)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Abstract)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Abstract)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Abstract)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Abstract)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Picture)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Picture)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vedio)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.StoryCreatedTime)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vedio)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.StoryCreatedTime)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.OtherResources)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SyncTime)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.OtherResources)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SyncTime)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StoryCreatedTime)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.StoryCreatedTime)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SyncTime)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SyncTime)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Source)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SyncAccount)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Source)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SyncAccount)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SyncAppID)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SyncComment)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SyncAppID)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SyncComment)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SyncAccount)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SyncOther)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SyncAccount)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SyncOther)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SyncComment)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SyncComment)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SyncOther)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SyncOther)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.StoryId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StoryId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

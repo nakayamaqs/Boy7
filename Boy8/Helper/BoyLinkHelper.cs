@@ -9,7 +9,7 @@ using System.Web.Routing;
 namespace Boy8.Helper
 {
 
-    public static class BoyLinkHelper
+    public static class BoyLinkExtension
     {
         //
         // Summary:

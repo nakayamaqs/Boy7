@@ -7,6 +7,7 @@ using System.Web.Mvc;
 namespace Boy8.Controllers
 {
     [RequireHttps]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()

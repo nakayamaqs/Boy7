@@ -1,26 +1,52 @@
 ﻿@model Boy8.Models.Story
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "创建新故事";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
-{
+<div class="container">
+    <h4>宝贝，我想说的还有很多。。</h4>
+    <hr />
+    @using (Html.BeginForm("upload", "api", FormMethod.Post, new { @role = "form", @enctype = "multipart/form-data" }))
+    {
     @Html.AntiForgeryToken()
-    
+
+    <div class="row fileupload-buttonbar story-resource">
+        <div class="span7">
+            <div class="well">
+                <i class="icon-plus"></i><span>&nbsp;&nbsp;Add files...</span>
+                <input type="file" id="fileupload" name="fileupload" accept="image/*" multiple="multiple">
+                <button id="btnUploadAll" class="btn btn-success pull-right" type="button">
+                    Upload All
+                </button>
+                <div class="clearfix">
+                </div>
+                <div class="progress">
+                    <div class="bar" id="overallbar" style="width: 0%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span7">
+            <div class="well hide" id="filelistholder">
+            </div>
+        </div>
+        <div class="span7">
+        </div>
+    </div>
+    }
+    @using (Html.BeginForm("Create", "Story", FormMethod.Post, new { @role = "form" }))
+    {
+    @Html.AntiForgeryToken()
+
     <div class="form-horizontal">
-        <h4>Story</h4>
-        <hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title)
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title)
             </div>
         </div>
@@ -28,7 +54,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Body, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Body)
+                @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.TextBoxFor(model => model.Body, new { @class = "form-control" })*@
                 @Html.ValidationMessageFor(model => model.Body)
             </div>
         </div>
@@ -36,103 +63,42 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Abstract, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Abstract)
+                @Html.EditorFor(model => model.Abstract, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Abstract)
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.Picture, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.StoryCreatedOrSyncTime, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Picture)
-                @Html.ValidationMessageFor(model => model.Picture)
+                @Html.EditorFor(model => model.StoryCreatedOrSyncTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StoryCreatedOrSyncTime)
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Vedio, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Vedio)
-                @Html.ValidationMessageFor(model => model.Vedio)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OtherResources, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OtherResources)
-                @Html.ValidationMessageFor(model => model.OtherResources)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.StoryCreatedTime, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StoryCreatedTime)
-                @Html.ValidationMessageFor(model => model.StoryCreatedTime)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SyncTime, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SyncTime)
-                @Html.ValidationMessageFor(model => model.SyncTime)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Source, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Source)
-                @Html.ValidationMessageFor(model => model.Source)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SyncAppID, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SyncAppID)
-                @Html.ValidationMessageFor(model => model.SyncAppID)
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.SyncAccount, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SyncAccount)
+                @Html.EditorFor(model => model.SyncAccount, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.SyncAccount)
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.SyncComment, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SyncComment)
+                @Html.EditorFor(model => model.SyncComment, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.SyncComment)
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.SyncOther, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SyncOther)
+                @Html.EditorFor(model => model.SyncOther, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.SyncOther)
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email)
-                @Html.ValidationMessageFor(model => model.Email)
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Rating, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Rating)
+                @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Rating)
             </div>
         </div>
@@ -143,12 +109,45 @@
             </div>
         </div>
     </div>
-}
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryUploader")
+    <script type="text/javascript">
+        $(function () {
+            $('#fileupload').fileupload({
+                dataType: "json",
+                url: "/api/upload",
+                limitConcurrentUploads: 1,
+                sequentialUploads: true,
+                progressInterval: 100,
+                maxChunkSize: 10000,
+                add: function (e, data) {
+                    $('#filelistholder').removeClass('hide');
+                    data.context = $('<div />').text(data.files[0].name).appendTo('#filelistholder');
+                    $('</div><div class="progress"><div class="bar" style="width:0%"></div></div>').appendTo(data.context);
+                    $('#btnUploadAll').click(function () {
+                        data.submit();
+                    });
+                },
+                done: function (e, data) {
+                    data.context.text(data.files[0].name + '... Completed');
+                    $('</div><div class="progress"><div class="bar" style="width:100%"></div></div>').appendTo(data.context);
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#overallbar').css('width', progress + '%');
+                },
+                progress: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    data.context.find('.bar').css('width', progress + '%');
+                }
+            });
+        });
+    </script>
 }

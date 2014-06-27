@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configura
 		PublishScripts\Configurations\Boy8-WAWS-dev.json = PublishScripts\Configurations\Boy8-WAWS-dev.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabybookAPI", "BabybookAPI\BabybookAPI.csproj", "{A003B782-6376-42B2-9ACA-6F37B0BD354F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMediaLib", "AzureMediaLib\AzureMediaLib.csproj", "{9A222FB1-9F7E-4DDA-822C-77064D5981DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,11 +36,22 @@ Global
 		{938E3A7D-61D4-42EB-9A6B-E0C44D6DAE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938E3A7D-61D4-42EB-9A6B-E0C44D6DAE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938E3A7D-61D4-42EB-9A6B-E0C44D6DAE44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A003B782-6376-42B2-9ACA-6F37B0BD354F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A003B782-6376-42B2-9ACA-6F37B0BD354F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A003B782-6376-42B2-9ACA-6F37B0BD354F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A003B782-6376-42B2-9ACA-6F37B0BD354F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A222FB1-9F7E-4DDA-822C-77064D5981DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A222FB1-9F7E-4DDA-822C-77064D5981DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A222FB1-9F7E-4DDA-822C-77064D5981DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A222FB1-9F7E-4DDA-822C-77064D5981DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E5243BFC-FDF5-43E0-8471-250F4D82441C} = {DFD09348-D188-42C3-B682-206B663D6A4A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4
 	EndGlobalSection
 EndGlobal

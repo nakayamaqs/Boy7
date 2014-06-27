@@ -7,12 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Boy8.Models;
+using Boy8.DAL;
+using Boy8.ViewModels;
 
 namespace Boy8.Controllers
 {
+    [Authorize(Roles = "parent")]
     public class StoryController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private Baby7DbContext db = new Baby7DbContext();
 
         // GET: /Story/
         public ActionResult Index()
@@ -38,6 +41,9 @@ namespace Boy8.Controllers
         // GET: /Story/Create
         public ActionResult Create()
         {
+            var story = new Story();
+            story.Resources = new List<Resource>();
+            PopulateAssignedResources(story);
             return View();
         }
 
@@ -46,15 +52,25 @@ namespace Boy8.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="StoryId,Title,Body,Abstract,Picture,Vedio,OtherResources,StoryCreatedTime,SyncTime,Source,SyncAppID,SyncAccount,SyncComment,SyncOther,Email,Rating")] Story story)
+        public ActionResult Create([Bind(Include = "Title,Body,Abstract,StoryCreatedOrSyncTime,SyncAccount,SyncComment, Rating")] Story story, Resource[] selectedResources)
         {
+            if (selectedResources != null)
+            {                
+                foreach (var r in selectedResources)
+                {                   
+                    story.Resources.Add(r);
+                }
+            }
+
             if (ModelState.IsValid)
             {
+                story.StoryCreatedOrSyncTime = DateTime.Now;
                 db.Stories.Add(story);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            PopulateAssignedResources(story);
             return View(story);
         }
 
@@ -78,7 +94,7 @@ namespace Boy8.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="StoryId,Title,Body,Abstract,Picture,Vedio,OtherResources,StoryCreatedTime,SyncTime,Source,SyncAppID,SyncAccount,SyncComment,SyncOther,Email,Rating")] Story story)
+        public ActionResult Edit([Bind(Include = "Title,Body,Abstract,StoryCreatedOrSyncTime,SyncAccount,SyncComment, Rating")] Story story)
         {
             if (ModelState.IsValid)
             {
@@ -123,5 +139,23 @@ namespace Boy8.Controllers
             }
             base.Dispose(disposing);
         }
+
+        #region Helper
+        private void PopulateAssignedResources(Story story)
+        {
+            var allStories = db.Stories;
+            var linkedResources = story.Resources == null ? null : new HashSet<Resource>(story.Resources.Select(r => r));
+            var viewModel = new List<StoryViewModel>();
+            foreach (var r in allStories)
+            {
+                viewModel.Add(new StoryViewModel
+                {
+                    Story = r,
+                    Resources = linkedResources,
+                });
+            }
+            ViewBag.Stories = viewModel;
+        }
+        #endregion
     }
 }

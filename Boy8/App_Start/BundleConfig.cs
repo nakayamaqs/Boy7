@@ -14,6 +14,13 @@ namespace Boy8
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryUploader").Include(
+                "~/Scripts/jquery.fileupload.js",
+                "~/Scripts/jquery.iframe-transport.js",
+                //"~/Scripts/jquery-ui-1.9.2.js",
+                "~/Scripts/jquery.ui.widget.js"));
+
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -30,6 +37,9 @@ namespace Boy8
                       "~/Content/bootstrap.css",
                       "~/Content/carousel.css",
                       "~/Content/zocial.css",
+                      "~/Content/jquery.fileupload-ui-noscript.css",
+                      "~/Content/jquery.fileupload-ui.css",
+                      "~/Content/jquery.fileupload.baby.css",
                       "~/Content/site.css"));
         }
     }
