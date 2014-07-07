@@ -31,7 +31,7 @@ namespace Boy8.Migrations
             //    );
             //
 
-            //AddUserAndRole(context); //test data.
+            AddUserAndRole(context); //test data.
         }
 
         bool AddUserAndRole(Baby7DbContext context)

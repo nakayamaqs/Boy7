@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "快乐时光";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="embed-responsive embed-responsive-16by9">
+        <video controls class="embed-responsive-item">
+            <source src="devstories.webm"
+                    type='video/webm;codecs="vp8, vorbis"' />
+            <source src="@ViewBag.EventToShow"
+                    type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+        </video>
+    </div>*@
+<div class="container">
+    <div class="embed-responsive embed-responsive-16by9 bb-video-html5player">
+        <video controls class="embed-responsive-item">
+            <source src="devstories.webm"
+                    type='video/webm;codecs="vp8, vorbis"' />
+            <source src="@ViewBag.EventToShow"
+                    type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+        </video>
+    </div>
+</div>
+
+<div class="row bb-video-watchlist">
+    <div class="col-xs-6 col-md-3 bb-video-item">
+        <a href="#" class="thumbnail">
+            <img src="//i1.ytimg.com/vi/wJKjsb_A8M4/default.jpg" alt="...">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3 bb-video-item">
+        <a href="#" class="thumbnail">
+            <img data-src="holder.js/100%x180" src="//i1.ytimg.com/vi/wJKjsb_A8M4/default.jpg" alt="...">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3 bb-video-item">
+        <a href="#" class="thumbnail">
+            <img data-src="holder.js/100%x180" src="//i1.ytimg.com/vi/wJKjsb_A8M4/default.jpg" alt="...">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3 bb-video-item">
+        <a href="#" class="thumbnail">
+            <img data-src="holder.js/100%x180" src="//i1.ytimg.com/vi/wJKjsb_A8M4/default.jpg" alt="...">
+        </a>
+    </div>
+</div>
+
+
+@*<div class="container">
+        <div id="myCarousel" class="carousel bb-carouselhelper" data-ride="carousel">
+            <div class="bb-video-container">
+                <video controls class="media-object bb-video-html5player">
+                    <source src="devstories.webm"
+                            type='video/webm;codecs="vp8, vorbis"' />
+                    <source src="@ViewBag.EventToShow"
+                            type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+                </video>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                Side bar.
+
+            </div>
+        </div>
+    </div>*@
+

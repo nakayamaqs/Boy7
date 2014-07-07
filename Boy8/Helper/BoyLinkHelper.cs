@@ -37,7 +37,7 @@ namespace Boy8.Helper
         //     The linkText parameter is null or empty.
         public static MvcHtmlString ActionLinkWithBadge(string messagebadge, string linkText, string actionName, string controllerName)
         {
-            return new MvcHtmlString(string.Format("<a href='{0}'>{1}<span class='badge'>{2}</span></a>", System.Web.VirtualPathUtility.ToAbsolute("~/") + controllerName + "/" + actionName, linkText, messagebadge));
+            return new MvcHtmlString(string.Format("<a href='{0}'>{1}<span class='badge bb-badge'>{2}</span></a>", System.Web.VirtualPathUtility.ToAbsolute("~/") + controllerName + "/" + actionName, linkText, messagebadge));
         }
     }
 }

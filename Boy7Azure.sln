@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabybookAPI", "BabybookAPI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMediaLib", "AzureMediaLib\AzureMediaLib.csproj", "{9A222FB1-9F7E-4DDA-822C-77064D5981DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMediaConsole", "AzureMediaConsole\AzureMediaConsole.csproj", "{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{9A222FB1-9F7E-4DDA-822C-77064D5981DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A222FB1-9F7E-4DDA-822C-77064D5981DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A222FB1-9F7E-4DDA-822C-77064D5981DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

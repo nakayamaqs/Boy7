@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="html-v">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,53 +19,52 @@
     <!-- Custom styles for this template -->
     @*<link href="carousel.css" rel="stylesheet">*@
 </head>
-<body class="bb-body-V1">
-    <div class="navbar-wrapper bb-navbar">       
-        <div class="navbar navbar-default navbar-static-top" role="navigation">
+<body class="bb-body">
+    <div class="container-full">
+        <header class="navbar navbar-transparent" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">
+                            Toggle navigation
+                        </span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">我儿七仔</a>
-                </div>
+                    </button><a href="/home/demo" class="navbar-brand">
+                        七仔
+                    </a>
+                </div> <!--/.navbar-header -->
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active">@Html.ActionLink("首页", "Index", "Home")</li>
-                        <li>@Boy8.Helper.BoyLinkExtension.ActionLinkWithBadge("42", "故事", "Index", "Story")</li>
+                    <ul class="nav navbar-nav bb-nav">
+                        @if (User.IsInRole("parent"))
+                        {
+                            <li>@Html.ActionLink("创建", "Create", "Story")</li>
+                        }
+                        <li>@Boy8.Helper.BoyLinkExtension.ActionLinkWithBadge("42", "故事 ", "Index", "Story")</li>
                         <li>@Html.ActionLink("精彩时刻", "Events", "Home")</li>
                         @*<a href="../Story">故事<span class="badge"> 42</span></a>*@
-                        <li>@Html.ActionLink("关于", "About", "Home")</li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<b class="caret"></b></a>
                             <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("本站简介", "About", "Home")</li>
                                 <li><a href="http://www.weibo.com/u/1712451982">爸爸的微博</a></li>
                                 <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
                     </ul>
                     @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </div>
+                </div> <!--/.nav-collapse -->
+            </div> <!--/.container -->
+        </header>
+        @RenderBody()
+
     </div>
 
-
-    @RenderBody()
-    <div class="container bb-footcontainer">
-        <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>Copyright &copy; 2014 Babywecare Inc. &middot; @Html.ActionLink("隐私", "Comming", "Home") &middot; @Html.ActionLink("服务条款", "Comming", "Home")</p>
-        </footer> <!-- FOOTER -->
-    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

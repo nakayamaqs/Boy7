@@ -207,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DBSync.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -252,7 +253,13 @@
     <Compile Include="Migrations\201406242055234_updateTime.Designer.cs">
       <DependentUpon>201406242055234_updateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201407042225034_includeMedial.cs" />
+    <Compile Include="Migrations\201407042225034_includeMedial.Designer.cs">
+      <DependentUpon>201407042225034_includeMedial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\MediaAsset.cs" />
+    <Compile Include="Models\MediaJob.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\Story.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -306,11 +313,18 @@
     <Content Include="fonts\zocial-regular-webfont.ttf" />
     <Content Include="fonts\zocial-regular-webfont.woff" />
     <Content Include="Content\jquery.fileupload.baby.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\Boy8.pubxml" />
     <Content Include="Scripts\doc.min.js" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <None Include="Scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.0.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.js" />
     <Content Include="Scripts\jquery.fileupload-ui.js" />
@@ -359,14 +373,14 @@
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Home\Events.cshtml" />
+    <Content Include="Views\Home\demo.cshtml" />
+    <Content Include="Views\Shared\_ZLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
@@ -403,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201406242055234_updateTime.resx">
       <DependentUpon>201406242055234_updateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407042225034_includeMedial.resx">
+      <DependentUpon>201407042225034_includeMedial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
