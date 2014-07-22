@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMediaLib", "AzureMedia
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMediaConsole", "AzureMediaConsole\AzureMediaConsole.csproj", "{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureStorageLib", "AzureStorage\AzureStorageLib.csproj", "{A365F12B-D4AE-4841-B1CF-905014990995}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76F0BD3D-3C3F-47D8-AB14-DD2A4417C660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A365F12B-D4AE-4841-B1CF-905014990995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A365F12B-D4AE-4841-B1CF-905014990995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A365F12B-D4AE-4841-B1CF-905014990995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A365F12B-D4AE-4841-B1CF-905014990995}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

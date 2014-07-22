@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -43,7 +43,8 @@ namespace Boy8.Migrations
             var um = new UserManager<Boy7User>(new UserStore<Boy7User>(context));
             var user = new Boy7User()
             {
-                UserName = "zhe1@boywecare.com",
+                UserName = "哲",
+                Email = "zhe1@boywecare.com"
             };
 
             ir = um.Create(user, "P_assw0rd1");

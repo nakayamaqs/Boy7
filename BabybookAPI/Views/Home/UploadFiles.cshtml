@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "UploadFiles";
+}
+
+<h2>UploadFiles</h2>
+
+<ul>
+    @foreach (var blob in @ViewBag.BlobList)
+    {
+        <li>@blob</li>
+    }
+</ul>

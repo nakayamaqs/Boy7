@@ -32,6 +32,7 @@ namespace Boy8
             //"~/Scripts/doc.min.js",
             //"~/Scripts/respond.js"
 
+            //For default layout and ZLayout
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-theme.css",
                       "~/Content/bootstrap.css",
@@ -41,6 +42,24 @@ namespace Boy8
                       "~/Content/jquery.fileupload-ui.css",
                       "~/Content/jquery.fileupload.baby.css",
                       "~/Content/site.css"));
+
+            //For PicLayout
+            bundles.Add(new StyleBundle("~/Content/css4pic").Include(
+                      "~/Content/bootstrap-theme.css",
+                      "~/Content/bootstrap.css",
+                      "~/Content/carousel.css",
+                      "~/Content/zocial.css",
+                      "~/Content/site.css",
+                      "~/Content/pic4site.css"));
+
+            //For VideoLayout
+            bundles.Add(new StyleBundle("~/Content/css4video").Include(
+                      "~/Content/bootstrap-theme.css",
+                      "~/Content/bootstrap.css",
+                      "~/Content/carousel.css",
+                      "~/Content/zocial.css",
+                      "~/Content/site.css",
+                      "~/Content/video4site.css"));
         }
     }
 }

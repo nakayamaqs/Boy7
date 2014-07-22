@@ -20,7 +20,6 @@ namespace Boy8.Models
 
         [DataType(DataType.MultilineText)]
         [Required]
-
         public string Body { get; set; }
 
         //Abstract of the story. Default length = 100.

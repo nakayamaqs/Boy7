@@ -1,22 +1,69 @@
 ﻿@model Boy8.ViewModels.ExternalLoginConfirmationViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "注册";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>Associate your @ViewBag.LoginProvider account.</h3>
 
 @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-
-    <h4>Association Form</h4>
+    <h3>关联您的 @ViewBag.LoginProvider 账号.</h3>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <p class="text-info">
-        You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
-            Please enter a user name for this site below and click the Register button to finish
-            logging in.
+        您已经成功认证<strong>@ViewBag.LoginProvider</strong>账号.
+           请填写相关信息以完成首次登陆。
     </p>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Baby.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Baby.Name, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Baby.Birthday, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Baby.Birthday, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Baby.Male, new { @class = "col-md-2 control-label" })
+        @*@Html.TextBoxFor(m => m.Baby.Male, new { @class = "form-control" })*@
+        <div class="col-xs-4 col-md-1">
+            <div class="input-group">
+                <span class="input-group-addon bb-form-span">
+                    @*<input type="radio" name="parent" /> 男孩*@
+                    @Html.RadioButtonFor(m => m.Baby.Male, 1)  男孩
+                </span>
+                <span class="input-group-addon bb-form-span">
+                    @*<input type="radio" name="male" /> 女孩*@
+                    @Html.RadioButtonFor(m => m.Baby.Male, 0)  女孩
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelForModel("父亲 / 母亲", new { @class = "col-md-2 control-label" })
+        <div class="col-xs-4 col-md-1">
+            <div class="input-group">
+                <span class="input-group-addon bb-form-span">
+                    @*<input type="radio" name="parent" />*@
+                    @Html.RadioButton("parent", "father" ) 父亲
+                </span>
+                <span class="input-group-addon bb-form-span">
+                    @*<input type="radio" name="parent" />*@
+                    @Html.RadioButton("parent", "mother") 母亲
+                </span>
+            </div>
+        </div>
+    </div>
+     <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+        </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

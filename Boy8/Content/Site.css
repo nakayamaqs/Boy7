@@ -1,5 +1,6 @@
 ﻿.html-v {
     height: 100%;
+    position: relative;
 }
 
 body {
@@ -49,7 +50,14 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
-/*Baby customized section begin*/
+/** baby form */
+.bb-form-span {
+    background: transparent;
+    border: 0px;
+    padding-top: 7px;
+}
+
+/*Baby Layout*/
 .container-full {
     margin: 0 auto;
     width: 100%;
@@ -57,30 +65,84 @@ input[type="checkbox"].input-validation-error {
     min-height: 100%;
 }
 
-/*.carousel .item.bb-carousel-item {
-    width: 100%;
-    min-height: 100%;
-    /*height: 100%;*/
+@media all {
+    .bb-body {
+        height: 100%;
+        position: relative;
+        font-family: "Gotham Rounded Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #4f5962;
+        background-color: transparent;
+        padding-bottom: 0px; /** Overrid the setting in carousel.css */
+        background: center no-repeat fixed url('../Images/bg_suburb.jpg');
+    }
 }
 
-/*.carousel-inner > .item > img.bb-carousel-item {
-    max-width: 100%;
-    height: auto;
-}*/
+
+.bb-body-V1 {
+    padding-top: 50px;
+}
+
+.bb-marketing {
+    /* this should used with row(bootstrap) */
+    padding: 20px 15px 0px 15px;
+    margin: 0px;
+    width: 100%;
+    background-color: white;
+}
+
+.bb-socialsection {
+    /*background-color: #494949;*/
+    /*background-color: rgba(255, 255, 255, .25);*/
+    background: transparent;
+    color: white;
+    height: 300px;
+}
 
 .bb-hlsection {
     padding-top: 4px;
 }
 
 .bb-footcontainer {
-    padding: 0px;
+    /*padding: 0px;*/
+    padding: 25px 0px 35px 0px;
+    color: white;
 }
 
-.bb-divtodo {
+    .bb-footcontainer a {
+        color: white;
+        text-decoration: none;
+    }
+
+        .bb-footcontainer a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+.bb-foot-backicon {
+    font-size: 40px;
+}
+
+/*Baby customized section begin*/
+
+.bb-content-sec {
+    padding: 70px 40px 0px 0px;
+    background-color: rgba(176, 186, 191, 0.0980392);
+    color: rgb(79, 89, 98);
+}
+
+.bb-piccontent-sec {
+    padding: 70px 40px 0px 0px;
+}
+
+.bb-about {
+    padding-top: 80px;
+    background: transparent;
     min-height: 10em;
-    height: 400px;
-    display: table-cell;
-    vertical-align: middle;
+    /*height: 400px;*/
+    height: calc(100% - 100px);
+    color: white;
     text-align: center;
 }
 
@@ -99,7 +161,129 @@ input[type="checkbox"].input-validation-error {
 }
 
 .bb-badge {
-    margin-left:7px;
+    margin-left: 7px;
+}
+
+.col-lg-3.col-md-4.bb-image-col {
+    padding: 0px !important;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.bb-images-div {
+    text-align: center;
+    padding: 0px;
+}
+
+    .bb-images-div img {
+        width: 330px;
+        height: 300px;
+    }
+
+.bb-figure:hover .bb-bottom-gradient {
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4));
+}
+
+.bb-figure:hover .bb-metabar {
+    opacity: 1;
+}
+
+.bb-figure:hover .bb-inline-icons {
+    opacity: 1;
+}
+
+.bb-bottom-gradient {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    outline: 0;
+}
+
+/*.bb-metabar:hover {
+    opacity: 1;
+}
+
+    .bb-metabar:hover .bb-inline-icons {
+        opacity: 1;
+    }*/
+
+.bb-metabar {
+    padding: 5px 10px;
+    min-height: 45px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease;
+    -moz-transition: opacity 300ms ease;
+    -o-transition: opacity 300ms ease;
+    transition: opacity 300ms ease;
+}
+
+    .bb-metabar a {
+        color: #fff;
+        font-size: 12px;
+        text-decoration: none solid rgb(255, 255, 255);
+    }
+
+.bb-inline-icons {
+    opacity: 0;
+    position: absolute;
+    right: 4px;
+    bottom: 5px;
+}
+
+/*.bb-inline-icons:hover {
+        opacity: 1;
+    }*/
+
+.bb-metabar .bb-inline-icons .bb-view {
+    float: left;
+    margin-right: 10px;
+}
+
+.bb-display-item-tile {
+    text-align: left;
+}
+
+bb-display-widget-fave .bb-fave-counter {
+    float: left;
+    padding: 5px 0 0 3px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bb-display-widget-fave a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+}
+
+.bb-display-widget-comment .bb-comment-counter {
+    float: left;
+    padding: 5px 0 0 3px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+}
+
+.bb-images-title {
+    color: white;
+    font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bb-images-attribution {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .bb-video-html5player {
@@ -126,6 +310,10 @@ input[type="checkbox"].input-validation-error {
     left: 0;
     z-index: 1030;
     padding: 35px 0px;
+}
+
+.navbar .navbar-toggle {
+    border-color: #ddd;
 }
 
 .bb-nav > li > a:hover, .bb-nav > li > a:focus {
@@ -155,15 +343,23 @@ input[type="checkbox"].input-validation-error {
     font-family: "Gotham Rounded Book", "Helvetica Neue", Helvetica, Arial,;
 }
 
+.navbar .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
 @media screen and (min-width: 768px) {
     .hero {
         padding-top: 0px;
         padding-bottom: 0px;
+        min-height: 100%;
+        min-height: 100vh;
     }
 
     .container .hero {
         padding-right: 60px;
         padding-left: 60px;
+        min-height: 100%;
+        min-height: 100vh;
     }
 
     .hero h1,
@@ -178,16 +374,36 @@ input[type="checkbox"].input-validation-error {
     margin: 0px;
     font-size: 21px;
     line-height: 2.1428571435;
+    min-height: 100%;
     min-height: 100vh;
     position: relative;
+    color: white;
 }
+
+
+    /*@media (min-width: 768px) {
+  .hero {
+    min-height: 100vh;
+  }
+}
+@media (min-width: 992px) {
+  .hero {
+    min-height: 100vh;
+  }
+}
+@media (min-width: 1200px) {
+  .hero {
+    min-height: 100vh;
+  }
+}*/
 
     .hero .landing {
         position: absolute;
         left: 0;
         width: 100%;
         min-height: 100%;
-        background: url(../images/boy7.jpg) no-repeat center center fixed;
+        min-height: 100vh;
+        background: url(https://babybook.blob.core.windows.net/babyimages/boy7.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -202,16 +418,76 @@ input[type="checkbox"].input-validation-error {
         animation: fadein 1s;
     }
 
-.bb-body {
-    height: 100%;
-    position: relative;
-    font-family: "Gotham Rounded Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #4f5962;
-    background-color: #ffffff;
+    .hero .help {
+        padding-top: 50vh;
+        color: white;
+    }
+
+.landingSection2 {
+    background: url(../images/bg_subburb.jpg) no-repeat center center fixed;
 }
 
-.bb-body-V1 {
-    padding-top: 50px;
+.bb-socialicon {
+    font-size: -webkit-xxx-large;
+    font-size: 44px;
+}
+
+.bb-socialweibo {
+    background-image: url("../Images/social/weibo.jpeg");
+    background-position: center center;
+}
+
+.bb-div-thumbnail {
+    text-align: center;
+}
+
+.bb-transparent {
+    background-color: rgba(255, 255, 255, .25);
+}
+
+.bb-help-contact {
+    color: white;
+}
+
+    .bb-help-contact > a {
+        color: white;
+    }
+
+        .bb-help-contact > a:hover, .bb-help-contact > a:focus {
+            background-color: rgba(255, 255, 255, .25);
+            color: white;
+        }
+
+/* Chinese font */
+@font-face {
+    font-family: 'NotoSansHans-Black';
+    src: url('../fonts/NotoSansSChinese/NotoSansHans-Black.otf');
+}
+@font-face {
+    font-family: 'NotoSansHans-Bold';
+    src: url('../fonts/NotoSansSChinese/NotoSansHans-Bold.otf');
+}
+@font-face {
+    font-family: 'NotoSansHans-DemiLight';
+    src: url('../fonts/NotoSansSChinese/NotoSansHans-DemiLight.otf');
+}
+@font-face {
+    font-family: 'NotoSansHans-Light';
+    src: url('../fonts/NotoSansSChinese/NotoSansHans-Light.otf');
+}
+@font-face {
+    font-family: 'NotoSansHans-Medium';
+    src: url('../fonts/NotoSansSChinese/NotoSansHans-Medium.otf');
+}
+@font-face {
+    font-family: 'NotoSansHans-Regular';
+    src: url('../fonts/NotoSansSChinese/NotoSansHans-Regular.otf');
+}
+@font-face {
+    font-family: 'NotoSansHans-Thin-Windows';
+    src: url('../fonts/NotoSansSChinese/NotoSansHans-Thin-Windows.otf');
+}
+
+div {
+    font-family: NotoSansHans-Light; /**set default font*/
 }

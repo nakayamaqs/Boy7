@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Configuration;
+using BabybookAPI.BLL;
+using System.Web.Hosting;
+using AzureStorageLib;
 
 namespace BabybookAPI.Controllers
 {
@@ -11,7 +15,31 @@ namespace BabybookAPI.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
+            return View();
+        }
 
+        public ActionResult UploadFile()
+        {
+            ViewBag.Title = "Upload File to Azure Storage";
+            string containerName = "babyimages".ToLower(); //All letters in a container name must be lowercase.
+            var blobService = new BlobService(ConfigurationManager.AppSettings["AzureStorageConnection"]); //AzureStorageBLL.CreateBlobServiceClient();
+            //blobService.CreatePublicContainer(containerName);
+            blobService.UploadFileToBlob(containerName,  HostingEnvironment.MapPath("~/Images/ps1.jpg"), "2014/");
+            var result = blobService.ListBlobs(containerName, false).Split(new[] { '\r', '\n' },StringSplitOptions.RemoveEmptyEntries);
+            ViewBag.BlobList = result;
+            return View();
+        }
+
+        public ActionResult UploadFiles()
+        {
+            ViewBag.Title = "Upload Files to Azure Storage";
+            string containerName = "babyimages".ToLower(); //All letters in a container name must be lowercase.
+            var blobService = new BlobService(ConfigurationManager.AppSettings["AzureStorageConnection"]); //AzureStorageBLL.CreateBlobServiceClient();
+            //blobService.CreatePublicContainer(containerName);
+            AzureStorageBLL.UploadFilesByFolder(blobService, containerName, HostingEnvironment.MapPath("~/Images/"), "2014/");
+            //blobService.UploadFileToBlob(containerName, HostingEnvironment.MapPath("~/Images/ps1.jpg"), "2014/");
+            var result = blobService.ListBlobs(containerName, false).Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            ViewBag.BlobList = result;
             return View();
         }
     }

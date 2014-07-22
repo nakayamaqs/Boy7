@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "视频";
+    Layout = "~/Views/Shared/_VdLayout.cshtml";
+}
+
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+<div class="container">
+    <div class="header-wrapper">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 nogutter">
+                <div class="centervideo">
+                    @*<p>This is where the main video will go</p>*@
+                    <div class="embed-responsive embed-responsive-16by9">
+                        @*<iframe src="//player.youku.com/embed/XMjU3MjMxMTUy" class="embed-responsive-item"
+                                frameborder=0 allowfullscreen></iframe>*@
+                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/nIsCs9_-LP8" frameborder="0"
+                                allowtransparency="true" allowfullscreen></iframe>
+                        @*<iframe src="@ViewBag.EventToShow" allowtransparency="true"
+                                frameborder="0" scrolling="no" class="wistia_embed"></iframe>*@
+                        @*<div class="embed-responsive-item">
+                                <video controls class="embed-responsive-item">
+                                    <source src="devstories.webm"
+                                            type='video/webm;codecs="vp8, vorbis"' />
+                                    <source src="@ViewBag.EventToShow"
+                                            type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+                                </video>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 nogutter">
+                <div class="rightsidebar">
+
+                    <div class="streamtitle">
+                        <h2> Live Web Design</h2>
+                    </div>
+
+                    <div class="streamdesc-wrapper">
+                        <div class="streamdesc">
+                            <p><span class="highlight">视频简介: </span>Cute baby. She's was only ten months old when this video was taken, her reaction is priceless!!!!! To use this video in a commercial player or Broadcast, please contact licensing@storyful.com.</p>
+                        </div>
+                        <div class="streamcategory">
+                            <p><span class="highlight">分类: </span> Web Design, UX Design, Design Theory</p>
+                        </div>
+
+                        <div class="streamauthor">
+                            <p><span class="highlight">所有者:</span> Johnathan Smith</p>
+                        </div>
+                        <div class="authorwebsite">
+                            <p><span class="highlight">Website: </span><a href="#">www.boy7.com</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div><!--Header Wrapper-->
+
+    <div class="maincontent">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 smallvid">
+                        <div class="smallvid-title">
+                            <h3>Web Designing around</h3>
+                        </div>
+                        <div class="smallvid-player">
+                            <p class="ex">video 1</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 smallvid">
+                        <div class="smallvid-title">
+                            <h3>Illustrating around</h3>
+                        </div>
+                        <div class="smallvid-player">
+                            <p class="ex">video 2</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 smallvid">
+                        <div class="smallvid-title">
+                            <h3>Photoshoping around</h3>
+                        </div>
+                        <div class="smallvid-player">
+                            <p class="ex">video 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--column12-->
+        </div><!--row-->
+
+    </div><!--maincontent-->
+</div>

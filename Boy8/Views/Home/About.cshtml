@@ -1,11 +1,12 @@
 ﻿@{
     ViewBag.Title = "关于本站";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_PicLayout.cshtml";
 }
 
-<div class="container bb-divtodo">
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-
-    <div class="container marketing"> <p>记录宝宝的成长经历，分享父母的喜悦， 一起见证。</p> </div>
+@*<div class="container bb-divtodo">*@
+<div class="container bb-about">
+    <div class="row">
+        <h1>@ViewBag.Title. <small>@ViewBag.Message</small></h1>
+        <div class="container marketing"> <p>记录宝宝的成长经历，分享父母的喜悦，我们共同见证。</p> </div>
+    </div>
 </div>

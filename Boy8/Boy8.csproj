@@ -15,7 +15,7 @@
     <AssemblyName>Boy8</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort>44301</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -114,8 +114,9 @@
     <Reference Include="Microsoft.WindowsAzure.MediaServices.Client">
       <HintPath>..\packages\windowsazure.mediaservices.3.0.0.5\lib\net40\Microsoft.WindowsAzure.MediaServices.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=3.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAzure.Storage.3.0.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.4.1.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -213,6 +214,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BLL\BabyStorage.cs" />
+    <Compile Include="BLL\UserLogic.cs" />
     <Compile Include="Controllers\WebAPI\ProdController.cs" />
     <Compile Include="Controllers\WebAPI\UploadController.cs" />
     <Compile Include="DAL\Baby7DbContext.cs" />
@@ -257,6 +260,19 @@
     <Compile Include="Migrations\201407042225034_includeMedial.Designer.cs">
       <DependentUpon>201407042225034_includeMedial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201407082158283_AddBaby.cs" />
+    <Compile Include="Migrations\201407082158283_AddBaby.Designer.cs">
+      <DependentUpon>201407082158283_AddBaby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407082315335_UpdateBaby.cs" />
+    <Compile Include="Migrations\201407082315335_UpdateBaby.Designer.cs">
+      <DependentUpon>201407082315335_UpdateBaby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407082330005_ParentBabyRelation.cs" />
+    <Compile Include="Migrations\201407082330005_ParentBabyRelation.Designer.cs">
+      <DependentUpon>201407082330005_ParentBabyRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Baby.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\MediaAsset.cs" />
     <Compile Include="Models\MediaJob.cs" />
@@ -280,9 +296,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SyncSource.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Boy7User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="ViewModels\PicturesViewModel.cs" />
     <Compile Include="ViewModels\StoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -290,23 +307,35 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\pic4site.css" />
     <Content Include="Content\carousel.css" />
     <Content Include="Content\carousel.min.css" />
     <Content Include="Content\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\jquery.fileupload-ui.css" />
+    <Content Include="Content\video4site.css" />
     <Content Include="Content\zocial.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\zocial-regular-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Avatar\boy7\gd1.jpg" />
+    <Content Include="Images\Avatar\boy7\gd2.jpg" />
+    <Content Include="Images\Avatar\boy7\gd3.jpg" />
+    <Content Include="Images\Avatar\boy7\gd4.jpg" />
     <Content Include="Images\b500.jpg" />
     <Content Include="Images\Ba1.jpg" />
+    <Content Include="Images\bg_smartphones.jpg" />
+    <Content Include="Images\bg_suburb.jpg" />
     <Content Include="Images\boy7.jpg" />
+    <Content Include="Images\General\apple_appstore.png" />
+    <Content Include="Images\General\android_store.png" />
+    <Content Include="Images\General\wallpaper_p.jpg" />
     <Content Include="Images\ma7.jpg" />
     <Content Include="Images\ma72.jpg" />
     <Content Include="Images\main2.jpg" />
     <Content Include="Images\main3.jpg" />
+    <Content Include="Images\social\weibo.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\zocial-regular-webfont.eot" />
@@ -316,6 +345,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\NotoSansSChinese\LICENSE" />
+    <Content Include="fonts\NotoSansSChinese\NotoSansHans-Black.otf" />
+    <Content Include="fonts\NotoSansSChinese\NotoSansHans-Bold.otf" />
+    <Content Include="fonts\NotoSansSChinese\NotoSansHans-DemiLight.otf" />
+    <Content Include="fonts\NotoSansSChinese\NotoSansHans-Light.otf" />
+    <Content Include="fonts\NotoSansSChinese\NotoSansHans-Medium.otf" />
+    <Content Include="fonts\NotoSansSChinese\NotoSansHans-Regular.otf" />
+    <Content Include="fonts\NotoSansSChinese\NotoSansHans-Thin-Windows.otf" />
+    <None Include="Properties\PublishProfiles\boy7 %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Boy7.pubxml" />
     <None Include="Properties\PublishProfiles\Boy8.pubxml" />
     <Content Include="Scripts\doc.min.js" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js" />
@@ -343,6 +382,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -350,7 +390,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\V1.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
@@ -374,8 +414,15 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Home\Events.cshtml" />
-    <Content Include="Views\Home\demo.cshtml" />
-    <Content Include="Views\Shared\_ZLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Home\Progress.cshtml" />
+    <Content Include="Views\Home\ShowPictures.cshtml" />
+    <Content Include="Views\Home\PicStream.cshtml" />
+    <Content Include="Views\Shared\_PicLayout.cshtml" />
+    <Content Include="Views\Shared\_VdLayout.cshtml" />
+    <Content Include="Views\Home\Videos.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -387,6 +434,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201406182019578_Initial.resx">
       <DependentUpon>201406182019578_Initial.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201406182029178_update1.resx">
       <DependentUpon>201406182029178_update1.cs</DependentUpon>
@@ -421,6 +469,21 @@
     <EmbeddedResource Include="Migrations\201407042225034_includeMedial.resx">
       <DependentUpon>201407042225034_includeMedial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407082158283_AddBaby.resx">
+      <DependentUpon>201407082158283_AddBaby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407082315335_UpdateBaby.resx">
+      <DependentUpon>201407082315335_UpdateBaby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407082330005_ParentBabyRelation.resx">
+      <DependentUpon>201407082330005_ParentBabyRelation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AzureStorage\AzureStorageLib.csproj">
+      <Project>{a365f12b-d4ae-4841-b1cf-905014990995}</Project>
+      <Name>AzureStorageLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -440,7 +503,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2828</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44301/</IISUrl>
+          <IISUrl>https://localhost/Boy8</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

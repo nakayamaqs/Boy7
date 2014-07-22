@@ -1,24 +1,45 @@
 ﻿@{
-    ViewBag.Title = "快乐时光";
+    ViewBag.Title = "视频";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<div class="embed-responsive embed-responsive-16by9">
-        <video controls class="embed-responsive-item">
-            <source src="devstories.webm"
-                    type='video/webm;codecs="vp8, vorbis"' />
-            <source src="@ViewBag.EventToShow"
-                    type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
-        </video>
-    </div>*@
 <div class="container">
-    <div class="embed-responsive embed-responsive-16by9 bb-video-html5player">
-        <video controls class="embed-responsive-item">
-            <source src="devstories.webm"
-                    type='video/webm;codecs="vp8, vorbis"' />
-            <source src="@ViewBag.EventToShow"
-                    type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
-        </video>
+    <div class="header-wrapper">
+        <div class="row">
+            <div class="col-md-8 nogutter">
+                <div class="centervideo">
+                    <div class="embed-responsive embed-responsive-16by9 bb-video-html5player">
+                        <video controls class="embed-responsive-item">
+                            <source src="devstories.webm"
+                                    type='video/webm;codecs="vp8, vorbis"' />
+                            <source src="@ViewBag.EventToShow"
+                                    type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 nogutter">
+                <div class="rightsidebar">
+                    <div class="streamtitle">
+                        <h2> Live Web Design</h2>
+                    </div>
+                    <div class="streamdesc-wrapper">
+                        <div class="streamdesc">
+                            <p><span class="highlight">Stream Description: </span>Aliqua post-ironic put a bird on it blog beard. You probably haven't heard of them consequat Intelligentsia est fingerstache McSweeney's chia, post-ironic hashtag consectetur church-key deserunt. Non skateboard direct trade American Apparel, try-hard gluten-free commodo McSweeney's beard chambray. Wolf twee Austin, Brooklyn Neutra flexitarian Schlitz. Typewriter Bushwick ethnic, stumptown pi.</p>
+                        </div>
+                        <div class="streamcategory">
+                            <p><span class="highlight">Category: </span> Web Design, UX Design, Design Theory</p>
+                        </div>
+                        <div class="streamauthor">
+                            <p><span class="highlight">Streaming by:</span> Johnathan Smith</p>
+                        </div>
+                        <div class="authorwebsite">
+                            <p><span class="highlight">Website: </span><a href="#">www.livewebdesign.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

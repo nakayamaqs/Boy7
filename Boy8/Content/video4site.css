@@ -1,0 +1,108 @@
+﻿body {
+  padding-top: 50px;
+  background-image: url("http://i.imgur.com/gxWtC0h.png");
+}
+
+/*.navbar {
+  background-color: #2c343b;
+}
+.navbar ul.nav li a {
+  color: white;
+}
+.navbar a.navbar-brand {
+  color: #c44741;
+  font-family: Lobster;
+  font-size: 24px;
+  text-shadow: 1px 1px 0px #222222;
+}*/
+
+.header-wrapper {
+  margin-top: 50px;
+  min-height: 422px;
+}
+
+.centervideo {
+  background-color: #c44741;
+  height: 422px;
+}
+.centervideo p {
+  color: white;
+  line-height: 422px;
+  text-align: center;
+}
+
+.rightsidebar {
+  background-color: white;
+  -webkit-border-top-right-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  -moz-border-radius-bottomright: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.nogutter {
+  padding: 0px;
+  margin: 0px;
+}
+
+.streamtitle {
+  display: block;
+  background-color: #2c343b;
+  -webkit-border-top-right-radius: 7px;
+  -moz-border-radius-topright: 7px;
+  border-top-right-radius: 7px;
+}
+.streamtitle h2 {
+  color: white;
+  margin: 0;
+  line-height: 50px;
+  padding: 0px 20px;
+  font-family: Lato, sans;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.streamdesc-wrapper {
+  padding: 20px;
+  color: #52616d;
+  font-family: Lato,sans;
+  word-wrap: break-word;
+}
+.streamdesc-wrapper span.highlight {
+  font-weight: bold;
+}
+.streamdesc-wrapper .authorwebsite a {
+  color: #c44741;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.maincontent {
+  margin-top: 50px;
+}
+.maincontent .smallvid .smallvid-title {
+  display: block;
+  padding: 5px;
+  background-color: #2c343b;
+}
+.maincontent .smallvid .smallvid-title h3 {
+  font-family: Lato,sans;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  padding: 0 10px;
+  margin: 0;
+}
+.maincontent .smallvid .smallvid-player {
+  display: block;
+  min-height: 165px;
+  background-color: #c44741;
+}
+.maincontent .smallvid .smallvid-player p.ex {
+  line-height: 165px;
+  color: white;
+  text-align: center;
+}

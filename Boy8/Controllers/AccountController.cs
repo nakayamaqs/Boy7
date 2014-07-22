@@ -12,6 +12,9 @@ using Microsoft.Owin.Security;
 using Owin;
 using Boy8.Models;
 using Boy8.ViewModels;
+using Boy8.DAL;
+using Boy8.BLL;
+
 
 namespace Boy8.Controllers
 {
@@ -19,11 +22,12 @@ namespace Boy8.Controllers
     public class AccountController : Controller
     {
         private ApplicationUserManager _userManager;
+        private Baby7DbContext boy7DB = new Baby7DbContext();
 
         public AccountController()
-        {
+        {            
         }
-
+        
         public AccountController(ApplicationUserManager userManager)
         {
             UserManager = userManager;
@@ -92,12 +96,15 @@ namespace Boy8.Controllers
         {
             if (ModelState.IsValid)
             {
+                var baby = new Baby { Name = model.Baby.Name, Birthday = model.Baby.Birthday, Male = model.Baby.Male };
+                //to do: link parent user to Baby.
                 var user = new Boy7User() { UserName = model.Email, Email = model.Email };
                 IdentityResult result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-
+                    //connects baby with parent user
+                    var conResult = await UserLogic.ConnectsBabyWithParent(boy7DB, user.Id, baby);
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -413,6 +420,13 @@ namespace Boy8.Controllers
                     BirthDate = model.BirthDate,
                     HomeTown = model.HomeTown
                 };
+                var baby = new Baby
+                {
+                    Name = model.Baby.Name,
+                    Birthday =  model.Baby.Birthday,
+                    Male = model.Baby.Male,
+                };
+               
 
                 IdentityResult result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
@@ -422,7 +436,8 @@ namespace Boy8.Controllers
                     {
                         await UserManager.AddToRoleAsync(user.Id, "parent");
                         await SignInAsync(user, isPersistent: false);
-
+                        //Connects baby with parent user.                       
+                        await UserLogic.ConnectsBabyWithParent(boy7DB, user.Id, baby);
                         // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                         // Send an email with this link
                         // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -471,6 +486,10 @@ namespace Boy8.Controllers
             {
                 UserManager.Dispose();
                 UserManager = null;
+            }
+            if (disposing && boy7DB != null) {
+                boy7DB.Dispose();
+                boy7DB = null;
             }
             base.Dispose(disposing);
         }

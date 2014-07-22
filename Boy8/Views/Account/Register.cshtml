@@ -1,41 +1,91 @@
 ﻿@model Boy8.ViewModels.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "注册";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="container">
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h3>@ViewBag.Title</h3>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Baby.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Baby.Name, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Baby.Birthday, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Baby.Birthday, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+        <div class="form-group">
+            @Html.LabelFor(m => m.Baby.Male, new { @class = "col-md-2 control-label" })
+            @*@Html.TextBoxFor(m => m.Baby.Male, new { @class = "form-control" })*@
+            <div class="col-xs-4 col-md-1">
+                <div class="input-group">
+                    <span class="input-group-addon bb-form-span">
+                        @*<input type="radio" name="parent" /> 男孩*@
+                        @Html.RadioButtonFor(m => m.Baby.Male, true)  男孩
+                    </span>
+                    <span class="input-group-addon bb-form-span">
+                        @*<input type="radio" name="male" /> 女孩*@
+                        @Html.RadioButtonFor(m => m.Baby.Male, false)  女孩
+                    </span>
+                </div>
+            </div>
 
+        </div>
+        <div class="form-group">
+            @Html.LabelForModel("父亲 / 母亲", new { @class = "col-md-2 control-label" })
+            <div class="col-xs-4 col-md-1">
+                <div class="input-group">
+                    <span class="input-group-addon bb-form-span">
+                        @*<input type="radio" name="parent" />*@
+                        @Html.RadioButtonFor(m => m.Baby.Parents, new { name = "parent" }) 父亲
+                    </span>
+                    <span class="input-group-addon bb-form-span">
+                        @*<input type="radio" name="parent" />*@
+                        @Html.RadioButtonFor(m => m.Baby.Parents, new { name = "parent" }) 母亲
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
+        </div>
+    }
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

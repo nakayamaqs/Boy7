@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css4pic")
+</head>
+<body class="bb-body">
+    <div class="container-fluid" style="margin-top:-20px; padding:0px;">
+        <header class="navbar navbar-transparent" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">
+                            Toggle navigation
+                        </span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><a href="~/home/Index" class="navbar-brand">
+                        七仔
+                    </a>
+                </div> <!--/.navbar-header -->
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav bb-nav">
+                        @if (User.IsInRole("parent"))
+                        {
+                        <li>@Html.ActionLink("创建", "Create", "Story")</li>
+                        }
+                        <li>@Boy8.Helper.BoyLinkExtension.ActionLinkWithBadge("42", "故事 ", "Index", "Story")</li>
+                        <li>@Boy8.Helper.BoyLinkExtension.ActionLinkWithBadge("35", "照片流", "picstream", "Home")</li>
+                        <li>@Html.ActionLink("精彩时刻", "Videos", "Home")</li>
+                        @*<a href="../Story">故事<span class="badge"> 42</span></a>*@
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("本站简介", "About", "Home")</li>
+                                <li>@Html.ActionLink("旧版", "V1", "Home")</li>
+                                <li><a href="http://www.weibo.com/u/1712451982">爸爸的微博</a></li>
+                                <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div> <!--/.nav-collapse -->
+            </div> <!--/.container -->
+        </header>
+        @RenderBody()
+        <div class="container">
+            <footer class="bb-footcontainer">
+                <p class="pull-right"><a href="#" title="回到顶部"><i class="glyphicon glyphicon-circle-arrow-up bb-foot-backicon"></i></a></p>
+                <p>Copyright &copy; 2014 Babywecare Inc. &middot; @Html.ActionLink("隐私", "Comming", "Home") &middot; @Html.ActionLink("服务条款", "Comming", "Home")</p>
+            </footer> <!-- FOOTER -->
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,684 @@
+﻿@{
+    ViewBag.Title = "ShowPictures";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+
+        @{ List<Boy8.ViewModels.PicturesViewModel> pictures = ViewBag.BabyPictures;
+         foreach (var bp in pictures)
+         {
+            <div class="col-lg-3 col-md-4 bb-image-col">
+                <figure class="bb-figure">
+                    <div class="bb-images-div ">
+                        <img class="img-rounded img-responsive" data-src="holder.js/140x140" src="@bp.URL" alt="Generic placeholder image">
+                    </div>
+                    <a class="bb-bottom-gradient" href="@bp.URL" data-rapid_p="262"></a>
+                    <div class="bb-metabar">
+                        <div class="bb-display-item-tile">
+                            <div style="height:0px;">
+                                <span class="bb-images-title">@bp.Title</span>
+                                <span class="bb-images-attribution">
+                                    by <a href="@bp.AuthorURL" title="@bp.Author">Someone on Flickr</a>
+                                </span>
+                                @*<p><a class="btn btn-default" href="#" role="button>View details &raquo;</a></p>*@
+                            </div>
+                        </div>
+                        <div class="bb-inline-icons">
+                            <div class="bb-view bb-display-item-tile">
+                                <div class="bb-display-widget-fave">
+                                    <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                        <span class="bb-fave-counter">@bp.LikeCount</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bb-view bb-display-item-tile">
+                                <div class="ui-display-widget-comment">
+                                    <span class="ui-link" data-action="getcomments">
+                                        <span class="glyphicon glyphicon-comment"></span>
+                                        <span class="comment-counter">@bp.CommentCount</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+         }
+        }
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-lg-3 col-md-4 bb-image-col">
+            <figure class="bb-figure">
+                <div class="bb-images-div">
+                    <img class="img-rounded" data-src="holder.js/140x140" src="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" alt="Generic placeholder image">
+                </div>
+                <a class="bb-bottom-gradient" href="https://babybook.blob.core.windows.net/babyimages/2014/ps1.jpg" data-rapid_p="262"></a>
+                <div class="bb-metabar">
+                    <div class="bb-display-item-tile">
+                        <div style="height:0px;">
+                            <span class="bb-images-title">Cute babies</span>
+                            <span class="bb-images-attribution">
+                                by <a href="https://babybook.blob.core.windows.net/babyimages/2014/" title="Two kids">Someone on Flickr</a>
+                            </span>
+                            @*<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>*@
+                        </div>
+                    </div>
+                    <div class="bb-inline-icons">
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="bb-display-widget-fave">
+                                <a href="#" data-action="fave" title="喜欢" data-rapid_p="1009">
+                                    <span class="glyphicon glyphicon-heart"></span>
+                                    <span class="bb-fave-counter">3</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bb-view bb-display-item-tile">
+                            <div class="ui-display-widget-comment">
+                                <span class="ui-link" data-action="getcomments">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span class="comment-counter">4</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+
+
+    </div>
+
+</div>
