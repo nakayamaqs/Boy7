@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Boy8
 {
@@ -10,8 +11,11 @@ namespace Boy8
     {
         public static void Register(HttpConfiguration config)
         {
-            config.MapHttpAttributeRoutes();
 
+            var cors = new EnableCorsAttribute("http://*.azurewebsites.net,http://localhost,https://localhost", "*", "*");
+            config.EnableCors(cors);
+
+            config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

@@ -14,6 +14,11 @@ namespace Boy8.Models
             Girl = 0,
             Boy = 1,
         }
+        public enum ParentType
+        {
+            Mother = 0,
+            Father = 1,
+        }
 
         [Required]
         [Key]

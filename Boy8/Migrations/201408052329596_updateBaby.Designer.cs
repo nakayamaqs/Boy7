@@ -7,13 +7,13 @@ namespace Boy8.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class ParentBabyRelation : IMigrationMetadata
+    public sealed partial class updateBaby : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ParentBabyRelation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateBaby));
         
         string IMigrationMetadata.Id
         {
-            get { return "201407082330005_ParentBabyRelation"; }
+            get { return "201408052329596_updateBaby"; }
         }
         
         string IMigrationMetadata.Source

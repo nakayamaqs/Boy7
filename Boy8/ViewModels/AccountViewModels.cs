@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Boy8.Models;
+using System;
 
 namespace Boy8.ViewModels
 {
@@ -72,8 +73,27 @@ namespace Boy8.ViewModels
 
     public class RegisterViewModel
     {
+        //[Required]
+        //public Baby Baby { get; set; }
+
+        [StringLength(15, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [DataType(DataType.Text)]
+        [Display(Name = "宝宝姓名")]
+        public string BabyName { get; set; }
+
+        [Display(Name = "宝宝性别")]
         [Required]
-        public Baby Baby { get; set; }
+        public Baby.MaleType BabyMale { get; set; }  //1 -> boy, 0 -> Girl
+
+        [Display(Name = "宝宝生日")]
+        [DataType(DataType.DateTime)]
+        [Required]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime BabyBirthday { get; set; }
+
+        [Display(Name = "和宝宝的关系")]
+        [Required]
+        public Baby.ParentType BabyParentType { get; set; }  //1 -> Dad, 0 -> Mom
 
         [StringLength(15, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
         [DataType(DataType.Text)]

@@ -12,45 +12,45 @@
         <hr />
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(m => m.Baby.Name, new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.BabyName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Baby.Name, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.BabyName, new { @class = "form-control" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Baby.Birthday, new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.BabyBirthday, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Baby.Birthday, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.BabyBirthday, new { @class = "form-control" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Baby.Male, new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.BabyMale, new { @class = "col-md-2 control-label" })
             @*@Html.TextBoxFor(m => m.Baby.Male, new { @class = "form-control" })*@
             <div class="col-xs-4 col-md-1">
                 <div class="input-group">
                     <span class="input-group-addon bb-form-span">
                         @*<input type="radio" name="parent" /> 男孩*@
-                        @Html.RadioButtonFor(m => m.Baby.Male, true)  男孩
+                        @Html.RadioButtonFor(m => m.BabyMale, Boy8.Models.Baby.MaleType.Boy)  男孩
                     </span>
                     <span class="input-group-addon bb-form-span">
                         @*<input type="radio" name="male" /> 女孩*@
-                        @Html.RadioButtonFor(m => m.Baby.Male, false)  女孩
+                        @Html.RadioButtonFor(m => m.BabyMale, Boy8.Models.Baby.MaleType.Girl)  女孩
                     </span>
                 </div>
             </div>
 
         </div>
         <div class="form-group">
-            @Html.LabelForModel("父亲 / 母亲", new { @class = "col-md-2 control-label" })
+            @Html.LabelForModel("您是宝宝的？", new { @class = "col-md-2 control-label" })
             <div class="col-xs-4 col-md-1">
                 <div class="input-group">
                     <span class="input-group-addon bb-form-span">
                         @*<input type="radio" name="parent" />*@
-                        @Html.RadioButtonFor(m => m.Baby.Parents, new { name = "parent" }) 父亲
+                        @Html.RadioButtonFor(m => m.BabyParentType, Boy8.Models.Baby.ParentType.Father) 父亲
                     </span>
                     <span class="input-group-addon bb-form-span">
                         @*<input type="radio" name="parent" />*@
-                        @Html.RadioButtonFor(m => m.Baby.Parents, new { name = "parent" }) 母亲
+                        @Html.RadioButtonFor(m => m.BabyParentType, Boy8.Models.Baby.ParentType.Mother) 母亲
                     </span>
                 </div>
             </div>
@@ -70,13 +70,13 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", value = "ZZh@123456"})
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", value = "ZZh@123456" })
             </div>
         </div>
         <div class="form-group">

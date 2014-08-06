@@ -96,7 +96,7 @@ namespace Boy8.Controllers
         {
             if (ModelState.IsValid)
             {
-                var baby = new Baby { Name = model.Baby.Name, Birthday = model.Baby.Birthday, Male = model.Baby.Male };
+                var baby = new Baby { Name = model.BabyName, Birthday = model.BabyBirthday, Male = model.BabyMale };
                 //to do: link parent user to Baby.
                 var user = new Boy7User() { UserName = model.Email, Email = model.Email };
                 IdentityResult result = await UserManager.CreateAsync(user, model.Password);
