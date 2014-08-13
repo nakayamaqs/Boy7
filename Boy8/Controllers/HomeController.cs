@@ -73,6 +73,11 @@ namespace Boy8.Controllers
             return View();
         }
 
+        public ActionResult PicUpload()
+        {
+            return View();
+        }
+
         public ActionResult Progress()
         {
             return View();

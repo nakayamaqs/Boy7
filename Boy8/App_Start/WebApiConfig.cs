@@ -12,7 +12,7 @@ namespace Boy8
         public static void Register(HttpConfiguration config)
         {
 
-            var cors = new EnableCorsAttribute("http://*.azurewebsites.net,http://localhost,https://localhost", "*", "*");
+            var cors = new EnableCorsAttribute("https://boy7.azurewebsites.net, http://boy7.azurewebsites.net, http://localhost, https://localhost", "*", "*");
             config.EnableCors(cors);
 
             config.MapHttpAttributeRoutes();

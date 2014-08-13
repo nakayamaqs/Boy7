@@ -146,6 +146,16 @@ input[type="checkbox"].input-validation-error {
     text-align: center;
 }
 
+.bb-picupload {
+    padding-top: 80px;
+    background: transparent;
+    min-height: 10em;
+    /*height: 400px;*/
+    height: calc(100% - 100px);
+    color: white;
+    text-align: center;
+}
+
 .bb-carouselhelper {
     margin-top: 0px;
     /*min-height: 100%;

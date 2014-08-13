@@ -227,6 +227,8 @@
     <Compile Include="Controllers\WebAPI\UploadController.cs" />
     <Compile Include="DAL\Baby7DbContext.cs" />
     <Compile Include="Helper\BoyEditorExtension.cs" />
+    <Compile Include="Infrastructure\AzureBlobStorageMultipartProvider.cs" />
+    <Compile Include="Infrastructure\CustomMultipartFormDataStreamProvider.cs" />
     <Compile Include="Migrations\201406191745484_Update2.cs" />
     <Compile Include="Migrations\201406191745484_Update2.Designer.cs">
       <DependentUpon>201406191745484_Update2.cs</DependentUpon>
@@ -273,6 +275,7 @@
     </Compile>
     <Compile Include="Models\Baby.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Infrastructure\Filter\ValidateMimeMultipartContentFilter.cs" />
     <Compile Include="Models\MediaAsset.cs" />
     <Compile Include="Models\MediaJob.cs" />
     <Compile Include="Models\Resource.cs" />
@@ -334,7 +337,9 @@
     <Content Include="Images\ma72.jpg" />
     <Content Include="Images\main2.jpg" />
     <Content Include="Images\main3.jpg" />
+    <Content Include="Images\social\google.png" />
     <Content Include="Images\social\weibo.jpeg" />
+    <Content Include="Images\social\weibo44.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\zocial-regular-webfont.eot" />
@@ -422,6 +427,7 @@
     <Content Include="Views\Shared\_VdLayout.cshtml" />
     <Content Include="Views\Home\Videos.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\PicUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,7 +5,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 using Boy8.BLL;
+using Boy8.Infrastructure.Filter;
+using System.IO;
+using System.Text;
+using System.Web;
+using System.Diagnostics;
 
 namespace Boy8.Controllers.WebAPI
 {
@@ -21,5 +27,6 @@ namespace Boy8.Controllers.WebAPI
             var thePictures = BabyStorage.GetPictures("babyimages").Take(12).ToList();
             return JsonConvert.SerializeObject(thePictures);
         }
+
     }
 }

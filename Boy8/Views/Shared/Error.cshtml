@@ -1,9 +1,23 @@
-﻿@model System.Web.Mvc.HandleErrorInfo
+﻿@using System.Diagnostics
+@model System.Web.Mvc.HandleErrorInfo
 
 @{
     ViewBag.Title = "Error";
+
 }
 
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>
 
+@{
+    ViewBag.Title = "Error";
+    var message = string.Format("Error in Controller {0}, Action method {1}. Exception: {2}",
+        Model.ControllerName, Model.ActionName, Model.Exception.Message);
+    if (Model.Exception.InnerException != null)
+    {
+        message += "; Inner exception: " + Model.Exception.InnerException.Message;
+    }
+    
+    <h3>@message</h3>
+    Trace.TraceError(message);
+}
