@@ -12,19 +12,20 @@ using System.IO;
 using System.Text;
 using System.Web;
 using System.Diagnostics;
+using Boy8.Models;
 
 namespace Boy8.Controllers.WebAPI
 {
     public class ImagesController : ApiController
     {
         // GET api/Images/
-        public string Get()
+        public string Get(int skip = 0)
         {
             //string containerName = "babyimages".ToLower(); //All letters in a container name must be lowercase.
             //var blobService = new BlobService(ConfigurationManager.AppSettings["AzureStorageConnection"]); //AzureStorageBLL.CreateBlobServiceClient();
             //var result = blobService.FlatListBlobs(containerName);
 
-            var thePictures = BabyStorage.GetPictures("babyimages").Take(12).ToList();
+            var thePictures = BabyStorage.GetPictures(Boy7Config.ContainerName, skip, 12).ToList();
             return JsonConvert.SerializeObject(thePictures);
         }
 

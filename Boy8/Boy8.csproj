@@ -274,6 +274,7 @@
       <DependentUpon>201408052329596_updateBaby.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Baby.cs" />
+    <Compile Include="Models\Boy7Config.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Infrastructure\Filter\ValidateMimeMultipartContentFilter.cs" />
     <Compile Include="Models\MediaAsset.cs" />

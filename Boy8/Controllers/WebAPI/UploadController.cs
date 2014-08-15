@@ -13,6 +13,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Boy8.BLL;
+using Boy8.Models;
 
 namespace Boy8.Controllers.WebAPI
 {
@@ -50,12 +51,12 @@ namespace Boy8.Controllers.WebAPI
         public async Task<HttpResponseMessage> AzureImages()
         {
             try
-            {               
+            {
                 string root = HttpContext.Current.Server.MapPath("~/App_Data");
                 var streamProvider = new MultipartFormDataStreamProvider(root); //HttpContext.Current.Server.MapPath("~/App_Data")
                 await Request.Content.ReadAsMultipartAsync(streamProvider);
                 StringBuilder sb = new StringBuilder(); // Holds the response body 
-                
+
                 // This illustrates how to get the form data. 
                 foreach (var key in streamProvider.FormData.AllKeys)
                 {
@@ -69,34 +70,24 @@ namespace Boy8.Controllers.WebAPI
                 foreach (var file in streamProvider.FileData)
                 {
                     Trace.WriteLine(file.Headers.ContentDisposition.FileName);
-                    Trace.WriteLine("Server file path: " + file.LocalFileName);                    
+                    Trace.WriteLine("Server file path: " + file.LocalFileName);
                     FileInfo fileInfo = new FileInfo(file.LocalFileName);
                     //sb.Append(string.Format("Uploaded file locally: {0} ({1} bytes) origin name: {2} \n", fileInfo.Name, fileInfo.Length,Path.GetExtension(file.Headers.ContentDisposition.FileName.Replace("\"", string.Empty))));
 
                     var filename = file.Headers.ContentDisposition.FileName.Replace("\"", string.Empty);
-                    using (var filestream = File.OpenRead(file.LocalFileName)) 
-                    { 
-                        BabyStorage.UploadPictures("babyimages", filename, filestream, "boy7test/2014/");
-                        sb.Append(string.Format("Uploaded file to Azure: {0} ({1} bytes) folder: {2} \n", filename,  fileInfo.Length,  "boy7test/2014/"));
-                    } 
-                    File.Delete(file.LocalFileName); 
+                    using (var filestream = File.OpenRead(file.LocalFileName))
+                    {
+
+                        var azurePath = BabyStorage.UploadPicture(Boy7Config.ContainerName, filename, filestream, "boy7test/2014/", file.Headers.ContentType.MediaType);
+                        sb.Append(string.Format("Uploaded file to Azure: {0} ({1} bytes) folder: {2} \n", azurePath, fileInfo.Length, "boy7test/2014/"));
+                    }
+                    File.Delete(file.LocalFileName);
                 }
-         
+
                 return new HttpResponseMessage()
                 {
                     Content = new StringContent(sb.ToString())
                 };
-
-                //return new FileResult
-                //{
-                //    FileNames = streamProvider.FileData.Select(entry => entry.LocalFileName),
-                //    Names = streamProvider.FileData.Select(entry => entry.Headers.ContentDisposition.FileName),
-                //    ContentTypes = streamProvider.FileData.Select(entry => entry.Headers.ContentType.MediaType),
-                //    Description = streamProvider.FormData["description"],
-                //    CreatedTimestamp = DateTime.UtcNow,
-                //    UpdatedTimestamp = DateTime.UtcNow,
-                //    DownloadLink = "TODO, will implement when file is persisited"
-                //};
             }
             catch (Exception ex)
             {
@@ -117,7 +108,6 @@ namespace Boy8.Controllers.WebAPI
 
             string root = HttpContext.Current.Server.MapPath("~/App_Data");
             var provider = new MultipartFormDataStreamProvider(root);
-
             try
             {
                 StringBuilder sb = new StringBuilder(); // Holds the response body
@@ -148,6 +138,11 @@ namespace Boy8.Controllers.WebAPI
                 {
                     Content = new StringContent(sb.ToString())
                 };
+
+                // Generate a link to the new book and set the Location header in the response.
+                //string uri = Url.Link("GetBookById", new { id = book.BookId });
+                //response.Headers.Location = new Uri(uri);
+                //return response;
             }
             catch (System.Exception e)
             {

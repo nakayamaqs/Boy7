@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Boy8.BLL;
+using Boy8.Models;
 
 namespace Boy8.Controllers
 {
@@ -38,7 +39,7 @@ namespace Boy8.Controllers
 
         public ActionResult ShowPictures()
         {
-            var thePictures = BabyStorage.GetPictures("babyimages");
+            var thePictures = BabyStorage.GetPictures(Boy7Config.ContainerName);
             ViewBag.BabyPictures = thePictures;
             return View();
         }
@@ -68,7 +69,7 @@ namespace Boy8.Controllers
 
         public ActionResult PicStream()
         {
-            var thePictures = BabyStorage.GetPictures("babyimages").Take(12).ToList();
+            var thePictures = BabyStorage.GetPictures(Boy7Config.ContainerName).Take(12).ToList();
             ViewBag.BabyPictures = thePictures;
             return View();
         }
